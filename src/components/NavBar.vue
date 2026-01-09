@@ -11,16 +11,17 @@
         <span></span>
       </button>
       
-      <ul class="nav-links" :class="{ 'active': isMenuOpen }">
-        <li><a href="#about" @click="closeMenu">About Us</a></li>
-        <li><a href="#services" @click="closeMenu">Services</a></li>
-        <li><a href="#gallery" @click="closeMenu">Gallery</a></li>
-        <li><a href="#clients" @click="closeMenu">Clients</a></li>
-        <li><a href="#contact" @click="closeMenu">Contact</a></li>
-        <li>
-          <a href="#contact" class="btn btn-primary nav-cta" @click="closeMenu">Get in Touch</a>
-        </li>
-      </ul>
+      <div class="nav-menu-wrapper" :class="{ 'active': isMenuOpen }">
+        <ul class="nav-links">
+          <li><a href="#about" @click="closeMenu">About Us</a></li>
+          <li><a href="#services" @click="closeMenu">Services</a></li>
+          <li><a href="#gallery" @click="closeMenu">Gallery</a></li>
+          <li><a href="#clients" @click="closeMenu">Clients</a></li>
+          <li><a href="#contact" @click="closeMenu">Contact</a></li>
+        </ul>
+      </div>
+      
+      <a href="#contact" class="btn btn-primary nav-cta">Get in Touch</a>
     </div>
   </nav>
 </template>
@@ -63,14 +64,14 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: rgba(74, 25, 66, 0.95);
+  background: rgba(14, 27, 54, 0.95);
   backdrop-filter: blur(20px);
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   box-shadow: var(--shadow-lg);
 }
 
@@ -81,12 +82,21 @@ onUnmounted(() => {
 }
 
 .logo img {
-  height: 50px;
+  height: 48px;
   transition: height var(--transition-normal);
 }
 
 .navbar.scrolled .logo img {
   height: 40px;
+}
+
+/* Pill-style nav menu wrapper */
+.nav-menu-wrapper {
+  background: rgba(27, 45, 67, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-links {
@@ -103,9 +113,15 @@ onUnmounted(() => {
   letter-spacing: 0.05em;
   position: relative;
   padding: 0.5rem 0;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
 }
 
-.nav-links a:not(.nav-cta)::after {
+.nav-links a:hover {
+  color: var(--color-text-light);
+}
+
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -116,7 +132,7 @@ onUnmounted(() => {
   transition: width var(--transition-normal);
 }
 
-.nav-links a:not(.nav-cta):hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
@@ -155,12 +171,18 @@ onUnmounted(() => {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+@media (max-width: 1024px) {
+  .nav-cta {
+    display: none;
+  }
+}
+
 @media (max-width: 968px) {
   .mobile-toggle {
     display: flex;
   }
   
-  .nav-links {
+  .nav-menu-wrapper {
     position: fixed;
     top: 0;
     right: -100%;
@@ -168,19 +190,31 @@ onUnmounted(() => {
     max-width: 400px;
     height: 100vh;
     background: var(--color-bg-darker);
+    border-radius: 0;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
     transition: right var(--transition-normal);
     padding: 2rem;
+    display: flex;
+    align-items: center;
   }
   
-  .nav-links.active {
+  .nav-menu-wrapper.active {
     right: 0;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 2rem;
   }
   
   .nav-links a {
     font-size: var(--text-lg);
+  }
+  
+  .nav-cta {
+    display: inline-flex;
+    margin-top: 2rem;
   }
 }
 </style>

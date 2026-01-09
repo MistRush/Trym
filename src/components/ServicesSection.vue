@@ -54,8 +54,7 @@ import { ref } from 'vue'
 
 const services = ref([
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#service1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <defs><linearGradient id="service1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D4647C"/><stop offset="100%" stop-color="#F5C542"/></linearGradient></defs>
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="8"/>
       <line x1="21" y1="21" x2="16.65" y2="16.65"/>
       <path d="M11 8v6M8 11h6"/>
@@ -68,8 +67,7 @@ const services = ref([
     ]
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#service2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <defs><linearGradient id="service2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D4647C"/><stop offset="100%" stop-color="#F5C542"/></linearGradient></defs>
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
     </svg>`,
     title: 'Engineering',
@@ -81,13 +79,12 @@ const services = ref([
     ]
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <defs><linearGradient id="service3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D4647C"/><stop offset="100%" stop-color="#F5C542"/></linearGradient></defs>
-      <rect x="3" y="3" width="18" height="18" rx="2" stroke="url(#service3)"/>
-      <path d="M3 9h18" stroke="url(#service3)"/>
-      <path d="M9 21V9" stroke="url(#service3)"/>
-      <path d="M13 13h4" stroke="url(#service3)"/>
-      <path d="M13 17h4" stroke="url(#service3)"/>
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M3 9h18"/>
+      <path d="M9 21V9"/>
+      <path d="M13 13h4"/>
+      <path d="M13 17h4"/>
     </svg>`,
     title: 'Asset Management',
     features: [
@@ -142,7 +139,7 @@ const services = ref([
 
 .service-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(212, 100, 124, 0.3);
+  border-color: rgba(225, 18, 18, 0.3);
   box-shadow: var(--shadow-glow);
 }
 
@@ -150,6 +147,7 @@ const services = ref([
   width: 56px;
   height: 56px;
   margin-bottom: var(--spacing-md);
+  color: var(--color-accent);
 }
 
 .service-icon :deep(svg) {
@@ -158,9 +156,9 @@ const services = ref([
 }
 
 .service-card h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   margin-bottom: var(--spacing-md);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Onest', sans-serif;
   font-weight: 600;
 }
 
@@ -182,7 +180,7 @@ const services = ref([
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  color: var(--color-gold);
+  color: var(--color-success);
   margin-top: 2px;
 }
 
@@ -200,7 +198,7 @@ const services = ref([
 }
 
 .aircraft-types h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   margin-bottom: var(--spacing-md);
   color: var(--color-text-light);
 }
@@ -219,7 +217,7 @@ const services = ref([
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--gradient-brand);
   border-radius: var(--radius-full);
-  color: var(--color-bg-dark);
+  color: var(--color-text-light);
   font-weight: 600;
 }
 

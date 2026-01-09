@@ -17,23 +17,34 @@
         </div>
       </div>
       
-      <div class="hero-stats">
-        <div class="hero-stat-item">
-          <span class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-            </svg>
-          </span>
-          <span class="stat-label">Boeing 737 & Airbus 320 Specialists</span>
+      <div class="hero-certifications">
+        <div class="certification-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span>EASA Certified</span>
         </div>
-        <div class="hero-stat-item">
-          <span class="stat-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
-          </span>
-          <span class="stat-label">EASA/Eurocontrol Certified</span>
+        <div class="certification-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span>Eurocontrol</span>
+        </div>
+        <div class="certification-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span>ISO Certified</span>
+        </div>
+        <div class="certification-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+          <span>Boeing 737 & Airbus 320</span>
         </div>
       </div>
     </div>
@@ -64,8 +75,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(ellipse at 20% 80%, rgba(212, 100, 124, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(245, 197, 66, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(225, 18, 18, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 75, 145, 0.1) 0%, transparent 50%),
     linear-gradient(180deg, var(--color-bg-darker) 0%, var(--color-bg-dark) 100%);
 }
 
@@ -76,7 +87,7 @@
   right: 0;
   bottom: 0;
   background: url('/images/gallery1.png') center/cover no-repeat;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 .hero-content {
@@ -93,7 +104,7 @@
   font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--color-gold);
+  color: var(--color-accent);
   margin-bottom: var(--spacing-sm);
   font-weight: 500;
 }
@@ -105,7 +116,7 @@
 }
 
 .hero-description {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   max-width: 600px;
   margin-bottom: var(--spacing-lg);
   line-height: 1.7;
@@ -117,34 +128,42 @@
   flex-wrap: wrap;
 }
 
-.hero-stats {
+.hero-certifications {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
 }
 
-.hero-stat-item {
+.certification-badge {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
 }
 
-.stat-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--color-gold);
+.certification-badge:hover {
+  border-color: rgba(225, 18, 18, 0.3);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.stat-icon svg {
-  width: 100%;
-  height: 100%;
+.certification-badge svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
 }
 
-.stat-label {
-  font-size: var(--text-sm);
+.certification-badge span {
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .scroll-indicator {
@@ -169,7 +188,7 @@
 .scroll-arrow {
   width: 24px;
   height: 40px;
-  border: 2px solid var(--color-pink);
+  border: 2px solid var(--color-accent);
   border-radius: 12px;
   position: relative;
 }
@@ -211,10 +230,13 @@
     justify-content: center;
   }
   
-  .hero-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
+  .hero-certifications {
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .certification-badge {
+    padding: 0.375rem 0.75rem;
   }
 }
 </style>

@@ -179,9 +179,9 @@ const form = ref({
 const isSubmitting = ref(false)
 const submitStatus = ref('')
 
-// QR Code URL using QR Server API
+// QR Code URL using QR Server API - updated colors
 const qrCodeUrl = computed(() => {
-  return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://trym.cz&bgcolor=4A1942&color=F5C542`
+  return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://trym.cz&bgcolor=0E1B36&color=FF4B91`
 })
 
 const submitForm = async () => {
@@ -245,10 +245,10 @@ const submitForm = async () => {
 }
 
 .company-card h3 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   margin-bottom: var(--spacing-md);
-  color: var(--color-gold);
-  font-family: 'Inter', sans-serif;
+  color: var(--color-accent);
+  font-family: 'Onest', sans-serif;
 }
 
 .contact-items {
@@ -267,7 +267,7 @@ const submitForm = async () => {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  color: var(--color-pink);
+  color: var(--color-accent);
   margin-top: 2px;
 }
 
@@ -298,7 +298,7 @@ const submitForm = async () => {
 }
 
 .contact-link:hover {
-  color: var(--color-pink);
+  color: var(--color-accent);
 }
 
 .qr-section {
@@ -313,7 +313,7 @@ const submitForm = async () => {
   font-size: var(--text-base);
   margin-bottom: var(--spacing-sm);
   color: var(--color-text-light);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Onest', sans-serif;
 }
 
 .qr-code {
@@ -392,7 +392,7 @@ const submitForm = async () => {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-pink);
+  border-color: var(--color-accent);
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -432,13 +432,13 @@ const submitForm = async () => {
 }
 
 .form-status.success {
-  background: rgba(76, 175, 80, 0.1);
-  color: #4CAF50;
+  background: rgba(50, 199, 70, 0.1);
+  color: var(--color-success);
 }
 
 .form-status.error {
-  background: rgba(244, 67, 54, 0.1);
-  color: #F44336;
+  background: rgba(225, 18, 18, 0.1);
+  color: var(--color-primary);
 }
 
 @media (max-width: 968px) {

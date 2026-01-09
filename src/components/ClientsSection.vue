@@ -91,7 +91,7 @@
 }
 
 .featured-client:hover {
-  border-color: rgba(212, 100, 124, 0.3);
+  border-color: rgba(225, 18, 18, 0.3);
   box-shadow: var(--shadow-glow);
 }
 
@@ -113,7 +113,7 @@
 .client-info h3 {
   font-size: var(--text-2xl);
   margin-bottom: var(--spacing-sm);
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 .client-description {
@@ -167,14 +167,14 @@
 }
 
 .badge-item:hover {
-  border-color: rgba(212, 100, 124, 0.3);
+  border-color: rgba(225, 18, 18, 0.3);
   background: rgba(255, 255, 255, 0.06);
 }
 
 .badge-icon {
   width: 28px;
   height: 28px;
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 .badge-icon svg {

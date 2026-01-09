@@ -30,9 +30,11 @@
           <div class="team-image">
             <img :src="member.photo" :alt="member.name" />
             <div class="team-overlay">
-              <div class="team-social">
-                <a href="#" class="social-link">in</a>
-              </div>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
             </div>
           </div>
           <div class="team-info">
@@ -85,7 +87,7 @@ const team = ref([
 .about-text h3 {
   font-size: var(--text-2xl);
   margin-bottom: var(--spacing-md);
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 .about-text p {
@@ -112,7 +114,7 @@ const team = ref([
 
 .team-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(212, 100, 124, 0.3);
+  border-color: rgba(225, 18, 18, 0.3);
   box-shadow: var(--shadow-glow);
 }
 
@@ -139,7 +141,7 @@ const team = ref([
   left: 0;
   right: 0;
   padding: var(--spacing-sm);
-  background: linear-gradient(transparent, rgba(74, 25, 66, 0.9));
+  background: linear-gradient(transparent, rgba(14, 27, 54, 0.9));
   opacity: 0;
   transition: opacity var(--transition-normal);
   display: flex;
@@ -151,16 +153,14 @@ const team = ref([
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--gradient-brand);
   border-radius: 50%;
-  color: var(--color-bg-dark);
-  font-weight: 700;
-  font-size: var(--text-lg);
+  color: var(--color-text-light);
   transition: transform var(--transition-fast);
 }
 
@@ -174,15 +174,16 @@ const team = ref([
 }
 
 .team-info h4 {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   margin-bottom: 0.25rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Onest', sans-serif;
+  font-weight: 600;
 }
 
 .team-role {
   display: block;
   font-size: var(--text-sm);
-  color: var(--color-pink);
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: var(--spacing-sm);

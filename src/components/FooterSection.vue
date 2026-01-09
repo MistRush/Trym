@@ -11,7 +11,9 @@
             </p>
             <div class="footer-social">
               <a href="#" class="social-link" aria-label="LinkedIn">
-                <span>in</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -42,15 +44,30 @@
             <h4>Contact</h4>
             <ul>
               <li>
-                <span class="icon">📍</span>
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
                 Kozlovice, Czech Republic
               </li>
               <li>
-                <span class="icon">✉️</span>
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </span>
                 <a href="mailto:info@trym.cz">info@trym.cz</a>
               </li>
               <li>
-                <span class="icon">🏢</span>
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18"/>
+                  </svg>
+                </span>
                 IČO: 22270019
               </li>
             </ul>
@@ -123,24 +140,23 @@ const currentYear = computed(() => new Date().getFullYear())
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  font-weight: 700;
+  color: var(--color-text-light);
   transition: all var(--transition-fast);
 }
 
 .social-link:hover {
   background: var(--gradient-brand);
   border-color: transparent;
-  color: var(--color-bg-dark);
 }
 
 .footer-nav h4,
 .footer-services h4,
 .footer-contact h4 {
   font-size: var(--text-base);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Onest', sans-serif;
   font-weight: 600;
   margin-bottom: var(--spacing-md);
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 .footer-nav ul,
@@ -165,7 +181,7 @@ const currentYear = computed(() => new Date().getFullYear())
 
 .footer-nav a:hover,
 .footer-contact a:hover {
-  color: var(--color-pink);
+  color: var(--color-accent);
 }
 
 .footer-contact li {
@@ -175,7 +191,9 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-contact .icon {
-  font-size: 1rem;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
 }
 
 .footer-bottom {

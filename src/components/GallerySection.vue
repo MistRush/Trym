@@ -115,7 +115,7 @@ const nextImage = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(74, 25, 66, 0.8);
+  background: rgba(14, 27, 54, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,7 +130,7 @@ const nextImage = () => {
 
 .gallery-icon {
   font-size: 3rem;
-  color: var(--color-gold);
+  color: var(--color-accent);
   margin-bottom: var(--spacing-xs);
 }
 
@@ -168,7 +168,7 @@ const nextImage = () => {
 }
 
 .lightbox-close:hover {
-  color: var(--color-pink);
+  color: var(--color-accent);
 }
 
 .lightbox-nav {
@@ -187,7 +187,7 @@ const nextImage = () => {
 }
 
 .lightbox-nav:hover {
-  background: var(--color-pink);
+  background: var(--color-accent);
 }
 
 .lightbox-nav.prev {

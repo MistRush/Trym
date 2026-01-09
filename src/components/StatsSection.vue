@@ -3,7 +3,7 @@
     <div class="container">
       <div class="stats-header">
         <h2 class="gradient-text">Why Choose TRYM?</h2>
-        <p>Proven expertise backed by numbers</p>
+        <p>Proven expertise backed by our commitment to excellence</p>
       </div>
       
       <div class="stats-grid">
@@ -11,14 +11,11 @@
           v-for="(stat, index) in stats" 
           :key="index" 
           class="stat-card"
-          :style="{ animationDelay: `${index * 0.2}s` }"
+          :style="{ animationDelay: `${index * 0.15}s` }"
         >
           <div class="stat-icon" v-html="stat.icon"></div>
-          <div class="stat-number">
-            <span class="number">{{ stat.value }}</span>
-            <span class="suffix">{{ stat.suffix }}</span>
-          </div>
-          <p class="stat-label">{{ stat.label }}</p>
+          <h3>{{ stat.title }}</h3>
+          <p class="stat-description">{{ stat.description }}</p>
         </div>
       </div>
     </div>
@@ -32,38 +29,38 @@ import { ref } from 'vue'
 
 const stats = ref([
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <defs><linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D4647C"/><stop offset="100%" stop-color="#F5C542"/></linearGradient></defs>
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
       <line x1="16" y1="2" x2="16" y2="6"/>
       <line x1="8" y1="2" x2="8" y2="6"/>
       <line x1="3" y1="10" x2="21" y2="10"/>
-      <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
     </svg>`,
-    value: 15,
-    suffix: '+',
-    label: 'Years of Experience'
+    title: '15+ Years Experience',
+    description: 'Over a decade of proven expertise in aviation engineering and maintenance management.'
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#gradient2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <defs><linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D4647C"/><stop offset="100%" stop-color="#F5C542"/></linearGradient></defs>
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
       <polyline points="22 4 12 14.01 9 11.01"/>
     </svg>`,
-    value: 25,
-    suffix: '+',
-    label: 'Successfully Completed Projects'
+    title: 'Certified Professionals',
+    description: 'EASA and Eurocontrol certified team with comprehensive regulatory expertise.'
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#gradient3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <defs><linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D4647C"/><stop offset="100%" stop-color="#F5C542"/></linearGradient></defs>
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="10"/>
       <line x1="2" y1="12" x2="22" y2="12"/>
       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
     </svg>`,
-    value: 15,
-    suffix: '+',
-    label: 'Countries Worldwide'
+    title: 'Global Operations',
+    description: 'Supporting clients across 15+ countries with worldwide technical coverage.'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+    </svg>`,
+    title: 'Fleet Specialists',
+    description: 'Deep expertise in Boeing 737 and Airbus 320 family aircraft maintenance.'
   }
 ])
 </script>
@@ -82,7 +79,7 @@ const stats = ref([
 }
 
 .stats-header h2 {
-  font-size: var(--text-4xl);
+  font-size: var(--text-3xl);
   margin-bottom: var(--spacing-xs);
 }
 
@@ -93,7 +90,7 @@ const stats = ref([
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-md);
   position: relative;
   z-index: 1;
@@ -112,15 +109,16 @@ const stats = ref([
 
 .stat-card:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(212, 100, 124, 0.3);
+  border-color: rgba(225, 18, 18, 0.3);
   transform: translateY(-10px);
   box-shadow: var(--shadow-glow);
 }
 
 .stat-icon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   margin: 0 auto var(--spacing-md);
+  color: var(--color-accent);
 }
 
 .stat-icon :deep(svg) {
@@ -128,35 +126,16 @@ const stats = ref([
   height: 100%;
 }
 
-.stat-number {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.25rem;
-  margin-bottom: var(--spacing-xs);
+.stat-card h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-light);
 }
 
-.number {
-  font-family: 'Playfair Display', serif;
-  font-size: var(--text-5xl);
-  font-weight: 700;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.suffix {
-  font-size: var(--text-3xl);
-  color: var(--color-gold);
-  font-weight: 600;
-}
-
-.stat-label {
-  font-size: var(--text-base);
+.stat-description {
+  font-size: var(--text-sm);
+  line-height: 1.6;
   color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .stats-bg-element {
@@ -166,11 +145,17 @@ const stats = ref([
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(212, 100, 124, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(225, 18, 18, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .stats-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
