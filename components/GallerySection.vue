@@ -2,7 +2,7 @@
   <section class="gallery-section section" id="gallery">
     <div class="container">
       <div class="section-title">
-        <h2>Our Work</h2>
+        <h2>Our Works</h2>
         <p>A glimpse into our aviation engineering projects</p>
       </div>
       

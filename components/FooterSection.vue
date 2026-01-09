@@ -5,6 +5,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <img src="/images/logo.png" alt="TRYM Logo" class="footer-logo" />
+            <p class="footer-brand-subtitle">TRY MY ENGINEERING</p>
             <p class="footer-tagline">
               Aviation experts providing specialized advice on aircraft maintenance, 
               compliance, and asset management.
@@ -80,11 +81,15 @@
       <div class="container">
         <div class="footer-bottom-content">
           <p class="copyright">
-            &copy; {{ currentYear }} TRYMyengineering s.r.o. All rights reserved.
+            © {{ currentYear }} TRYMyengineering s.r.o., všechna práva vyhrazena.
           </p>
           <div class="footer-badges">
             <span class="badge">EASA Certified</span>
             <span class="badge">Eurocontrol</span>
+          </div>
+          <div class="footer-credit">
+            <span>Powered by</span>
+            <a href="https://evidsoft.cz" target="_blank" rel="noopener">evidsoft</a>
           </div>
         </div>
       </div>
@@ -116,7 +121,16 @@ const currentYear = computed(() => new Date().getFullYear())
 
 .footer-logo {
   height: 50px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-brand-subtitle {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
   margin-bottom: var(--spacing-sm);
+  font-weight: 500;
 }
 
 .footer-tagline {
@@ -224,6 +238,24 @@ const currentYear = computed(() => new Date().getFullYear())
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   color: var(--color-text-muted);
+}
+
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.footer-credit a {
+  color: var(--color-accent);
+  font-weight: 500;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-credit a:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 968px) {

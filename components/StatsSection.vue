@@ -1,68 +1,37 @@
 <template>
-  <section class="stats-section">
+  <section class="stats-section" id="stats">
     <div class="container">
       <div class="stats-header">
-        <h2 class="gradient-text">Why Choose TRYM?</h2>
-        <p>Proven expertise backed by our commitment to excellence</p>
+        <h2>Why Choose <span class="gradient-text">TRYM?</span></h2>
+        <p>Proven expertise backed by numbers</p>
       </div>
       
-      <div class="stats-grid">
-        <div 
-          v-for="(stat, index) in stats" 
-          :key="index" 
-          class="stat-card"
-          :style="{ animationDelay: `${index * 0.15}s` }"
-        >
-          <div class="stat-icon" v-html="stat.icon"></div>
-          <h3>{{ stat.title }}</h3>
-          <p class="stat-description">{{ stat.description }}</p>
+      <div class="stats-showcase">
+        <div class="airplane-container">
+          <img src="/images/airplane-front.png" alt="Aircraft Front View" class="airplane-image" />
+          
+          <!-- Floating Stats Cards -->
+          <div class="floating-stat stat-projects">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Successfully Completed Projects</span>
+          </div>
+          
+          <div class="floating-stat stat-experience">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          
+          <div class="floating-stat stat-countries">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Countries Worldwide</span>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="stats-bg-element"></div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const stats = ref([
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-      <line x1="16" y1="2" x2="16" y2="6"/>
-      <line x1="8" y1="2" x2="8" y2="6"/>
-      <line x1="3" y1="10" x2="21" y2="10"/>
-    </svg>`,
-    title: '15+ Years Experience',
-    description: 'Over a decade of proven expertise in aviation engineering and maintenance management.'
-  },
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-      <polyline points="22 4 12 14.01 9 11.01"/>
-    </svg>`,
-    title: 'Certified Professionals',
-    description: 'EASA and Eurocontrol certified team with comprehensive regulatory expertise.'
-  },
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"/>
-      <line x1="2" y1="12" x2="22" y2="12"/>
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    </svg>`,
-    title: 'Global Operations',
-    description: 'Supporting clients across 15+ countries with worldwide technical coverage.'
-  },
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-    </svg>`,
-    title: 'Fleet Specialists',
-    description: 'Deep expertise in Boeing 737 and Airbus 320 family aircraft maintenance.'
-  }
-])
 </script>
 
 <style scoped lang="scss">
@@ -88,86 +57,132 @@ const stats = ref([
   color: var(--color-text-muted);
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-md);
+.stats-showcase {
   position: relative;
-  z-index: 1;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.stat-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  text-align: center;
-  transition: all var(--transition-normal);
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-}
-
-.stat-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(225, 18, 18, 0.3);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-glow);
-}
-
-.stat-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto var(--spacing-md);
-  color: var(--color-accent);
-}
-
-.stat-icon :deep(svg) {
+.airplane-container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.stat-card h3 {
-  font-size: var(--text-lg);
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-text-light);
+.airplane-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5));
 }
 
-.stat-description {
-  font-size: var(--text-sm);
-  line-height: 1.6;
-  color: var(--color-text-muted);
-}
-
-.stats-bg-element {
+.floating-stat {
   position: absolute;
-  top: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+  transition: all var(--transition-normal);
+}
+
+.floating-stat:hover {
+  border-color: rgba(225, 18, 18, 0.3);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.05);
+}
+
+.stat-number {
+  display: block;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 150px;
+}
+
+/* Position floating cards */
+.stat-projects {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.stat-experience {
+  top: 10%;
+  right: 5%;
+  animation-delay: 0.5s;
+}
+
+.stat-countries {
+  bottom: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(225, 18, 18, 0.08) 0%, transparent 70%);
-  pointer-events: none;
+  transform: translateX(-50%);
+  animation-delay: 1s;
 }
 
-@media (max-width: 1024px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-@media (max-width: 640px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+.stat-countries {
+  animation: floatCenter 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes floatCenter {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-showcase {
+    min-height: auto;
+    flex-direction: column;
   }
   
-  .stat-card {
-    padding: var(--spacing-md);
+  .airplane-container {
+    position: static;
   }
   
-  .stat-icon {
-    width: 48px;
-    height: 48px;
+  .airplane-image {
+    max-width: 300px;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .floating-stat {
+    position: static;
+    margin: var(--spacing-sm) 0;
+    transform: none !important;
+  }
+  
+  .stat-countries {
+    transform: none;
   }
 }
 </style>

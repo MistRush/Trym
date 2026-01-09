@@ -13,7 +13,8 @@
       
       <div class="nav-menu-wrapper" :class="{ 'active': isMenuOpen }">
         <ul class="nav-links">
-          <li><a href="#about" @click="closeMenu">About Us</a></li>
+          <li><a href="#hero" @click="closeMenu" class="nav-active">Home</a></li>
+          <li><a href="#about" @click="closeMenu">About us</a></li>
           <li><a href="#services" @click="closeMenu">Services</a></li>
           <li><a href="#gallery" @click="closeMenu">Gallery</a></li>
           <li><a href="#clients" @click="closeMenu">Clients</a></li>
@@ -118,6 +119,13 @@ onUnmounted(() => {
 }
 
 .nav-links a:hover {
+  color: var(--color-text-light);
+}
+
+.nav-links a.nav-active {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
   color: var(--color-text-light);
 }
 

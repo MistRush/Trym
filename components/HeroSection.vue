@@ -5,46 +5,56 @@
     
     <div class="container hero-content">
       <div class="hero-text animate-fadeInUp">
-        <p class="hero-subtitle">Aviation Engineering Excellence</p>
         <h1>Your Trusted Partner in <span class="gradient-text">Aircraft Management</span></h1>
         <p class="hero-description">
           We are aviation experts who provide specialized advice on aircraft maintenance, 
           compliance, and asset management for airlines and lessors.
         </p>
         <div class="hero-cta">
-          <a href="#services" class="btn btn-primary">Our Services</a>
-          <a href="#contact" class="btn btn-outline">Contact Us</a>
+          <a href="#services" class="btn btn-primary">
+            Our services
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            Contact us
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
         </div>
       </div>
       
-      <div class="hero-certifications">
-        <div class="certification-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="M9 12l2 2 4-4"/>
-          </svg>
-          <span>EASA Certified</span>
-        </div>
-        <div class="certification-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-            <path d="M2 12h20"/>
-          </svg>
-          <span>Eurocontrol</span>
-        </div>
-        <div class="certification-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          <span>ISO Certified</span>
-        </div>
-        <div class="certification-badge">
+      <!-- Specialist Cards -->
+      <div class="hero-specialist-cards">
+        <div class="specialist-card">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
           </svg>
-          <span>Boeing 737 & Airbus 320</span>
+          <span>Boeing 737 & Airbus 320 Specialists</span>
+        </div>
+        <div class="specialist-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span>EASA/Eurocontrol Certified</span>
+        </div>
+      </div>
+      
+      <!-- Certification Logos -->
+      <div class="hero-certifications">
+        <div class="certification-logo">
+          <img src="/images/logo-iso.png" alt="ISO Certified" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 40%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2212%22 fill=%22%23888%22>ISO</text></svg>'" />
+        </div>
+        <div class="certification-logo">
+          <img src="/images/logo-easa.png" alt="EASA" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 40%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2212%22 fill=%22%23888%22>EASA</text></svg>'" />
+        </div>
+        <div class="certification-logo">
+          <img src="/images/logo-eurocontrol.png" alt="Eurocontrol" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 40%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2210%22 fill=%22%23888%22>EUROCONTROL</text></svg>'" />
         </div>
       </div>
     </div>
@@ -100,15 +110,6 @@
   max-width: 800px;
 }
 
-.hero-subtitle {
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-sm);
-  font-weight: 500;
-}
-
 .hero h1 {
   font-size: var(--text-6xl);
   margin-bottom: var(--spacing-md);
@@ -128,13 +129,94 @@
   flex-wrap: wrap;
 }
 
-.hero-certifications {
+.hero-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-cta .btn svg {
+  transition: transform var(--transition-fast);
+}
+
+.hero-cta .btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Specialist Cards */
+.hero-specialist-cards {
   display: flex;
   gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.specialist-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(13, 13, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.specialist-card:hover {
+  border-color: rgba(225, 18, 18, 0.3);
+  background: rgba(13, 13, 26, 0.95);
+}
+
+.specialist-card svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent);
+}
+
+.specialist-card span {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+/* Certification Logos */
+.hero-certifications {
+  display: flex;
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-lg);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.certification-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.certification-logo:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.certification-logo img {
+  height: 40px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  opacity: 0.7;
+  transition: all var(--transition-normal);
+}
+
+.certification-logo:hover img {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
 }
 
 .certification-badge {
