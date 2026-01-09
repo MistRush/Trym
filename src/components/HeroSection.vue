@@ -59,7 +59,7 @@
 <script setup>
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .hero {
   position: relative;
   min-height: 100vh;

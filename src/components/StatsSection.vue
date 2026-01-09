@@ -65,7 +65,7 @@ const stats = ref([
 ])
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .stats-section {
   position: relative;
   padding: var(--spacing-xl) 0;

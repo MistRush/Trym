@@ -98,7 +98,7 @@ import { computed } from 'vue'
 const currentYear = computed(() => new Date().getFullYear())
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .footer {
   background: var(--color-bg-darker);
   border-top: 1px solid rgba(255, 255, 255, 0.08);

@@ -96,7 +96,7 @@ const services = ref([
 ])
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .services-section {
   background: var(--color-bg-darker);
   position: relative;

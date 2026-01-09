@@ -1,0 +1,494 @@
+// ==============================================
+// TRYM Design System - SCSS Variables & Mixins
+// ==============================================
+
+// Brand Colors - Figma Design System
+$color-bg-dark: #0E1B36;
+$color-bg-darker: #0A1428;
+$color-bg-light: #1B2D43;
+
+// Functional Colors
+$color-primary: #E11212;
+$color-accent: #FF4B91;
+$color-success: #32C746;
+$color-warning: #EFAB00;
+$color-card-bg: #F1F6F9;
+$color-outline: #DDEBF3;
+$color-subtle: #576583;
+$color-grey: #9FAECF;
+
+// Text Colors
+$color-text-light: #FFFFFF;
+$color-text-muted: rgba(255, 255, 255, 0.7);
+$color-text-dark: #1A1A1A;
+
+// Gradients
+$gradient-brand: linear-gradient(90deg, $color-accent 0%, $color-primary 100%);
+$gradient-brand-vertical: linear-gradient(180deg, $color-accent 0%, $color-primary 100%);
+$gradient-overlay: linear-gradient(180deg, rgba($color-bg-dark, 0.9) 0%, rgba($color-bg-dark, 0.7) 100%);
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-full: 9999px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Font Sizes - Figma Typography Scale
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.25rem;
+$text-xl: 1.5rem;
+$text-2xl: 2rem;
+$text-3xl: 2.5rem;
+$text-4xl: 3rem;
+$text-5xl: 4rem;
+$text-6xl: 4.5rem;
+
+// Grid System
+$container-desktop: 1320px;
+$container-notebook: 1070px;
+$container-mobile: 360px;
+$gutter: 30px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+$shadow-glow: 0 0 30px rgba($color-primary, 0.3);
+
+// ==============================================
+// Mixins
+// ==============================================
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@mixin card-base {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-lg;
+  transition: all $transition-normal;
+}
+
+@mixin card-hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba($color-primary, 0.3);
+  transform: translateY(-5px);
+  box-shadow: $shadow-lg;
+}
+
+@mixin gradient-text {
+  background: $gradient-brand;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ==============================================
+// CSS Variables (for Vue components)
+// ==============================================
+
+:root {
+  // Colors
+  --color-bg-dark: #{$color-bg-dark};
+  --color-bg-darker: #{$color-bg-darker};
+  --color-bg-light: #{$color-bg-light};
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-card-bg: #{$color-card-bg};
+  --color-outline: #{$color-outline};
+  --color-subtle: #{$color-subtle};
+  --color-grey: #{$color-grey};
+  --color-text-light: #{$color-text-light};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-dark: #{$color-text-dark};
+
+  // Gradients
+  --gradient-brand: #{$gradient-brand};
+  --gradient-brand-vertical: #{$gradient-brand-vertical};
+  --gradient-overlay: #{$gradient-overlay};
+
+  // Shadows
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-glow: #{$shadow-glow};
+
+  // Spacing
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+
+  // Border Radius
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-full: #{$radius-full};
+
+  // Transitions
+  --transition-fast: #{$transition-fast};
+  --transition-normal: #{$transition-normal};
+  --transition-slow: #{$transition-slow};
+
+  // Font Sizes
+  --text-xs: #{$text-xs};
+  --text-sm: #{$text-sm};
+  --text-base: #{$text-base};
+  --text-lg: #{$text-lg};
+  --text-xl: #{$text-xl};
+  --text-2xl: #{$text-2xl};
+  --text-3xl: #{$text-3xl};
+  --text-4xl: #{$text-4xl};
+  --text-5xl: #{$text-5xl};
+  --text-6xl: #{$text-6xl};
+
+  // Grid
+  --container-desktop: #{$container-desktop};
+  --container-notebook: #{$container-notebook};
+  --container-mobile: #{$container-mobile};
+  --gutter: #{$gutter};
+}
+
+// ==============================================
+// Reset & Base
+// ==============================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: $color-bg-dark;
+  color: $color-text-light;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// ==============================================
+// Typography
+// ==============================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: $text-6xl;
+}
+
+h2 {
+  font-size: $text-3xl;
+}
+
+h3 {
+  font-size: $text-xl;
+}
+
+h4 {
+  font-size: $text-lg;
+}
+
+p {
+  font-size: $text-base;
+  color: $color-text-muted;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color $transition-fast;
+}
+
+// ==============================================
+// Utility Classes
+// ==============================================
+
+.container {
+  width: 100%;
+  max-width: $container-desktop;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.section {
+  padding: $spacing-xl 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+  h2 {
+    @include gradient-text;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.gradient-text {
+  @include gradient-text;
+}
+
+// ==============================================
+// Buttons
+// ==============================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: $text-base;
+  font-weight: 600;
+  border-radius: $radius-full;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &-primary {
+    background: $gradient-brand;
+    color: $color-text-light;
+    box-shadow: $shadow-glow;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba($color-primary, 0.5);
+    }
+
+    &::after {
+      content: '→';
+      font-size: 1.2em;
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    color: $color-text-light;
+    border: 2px solid $color-accent;
+
+    &:hover {
+      background: $gradient-brand;
+      color: $color-text-light;
+      border-color: transparent;
+    }
+  }
+}
+
+// ==============================================
+// Cards
+// ==============================================
+
+.card {
+  @include card-base;
+  padding: $spacing-md;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    @include card-hover;
+  }
+
+  &-light {
+    background: $color-card-bg;
+    border: 1px solid $color-outline;
+    color: $color-text-dark;
+  }
+}
+
+.glass {
+  @include glass-effect;
+}
+
+// ==============================================
+// Animations
+// ==============================================
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate {
+  &-fadeInUp {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  &-fadeIn {
+    animation: fadeIn 0.6s ease forwards;
+  }
+
+  &-slideInRight {
+    animation: slideInRight 0.8s ease forwards;
+  }
+}
+
+// ==============================================
+// Responsive Breakpoints
+// ==============================================
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: $container-notebook;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --text-6xl: 3.5rem;
+    --text-5xl: 2.5rem;
+    --text-4xl: 2rem;
+  }
+
+  .container {
+    padding: 0 $spacing-sm;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-6xl: 2.5rem;
+    --text-5xl: 2rem;
+    --text-4xl: 1.75rem;
+    --text-3xl: 1.5rem;
+  }
+
+  .section {
+    padding: $spacing-lg 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-6xl: 2rem;
+    --text-5xl: 1.75rem;
+    --text-4xl: 1.5rem;
+  }
+}
+
+// ==============================================
+// Scrollbar
+// ==============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gradient-brand;
+  border-radius: $radius-full;
+}
+
+// ==============================================
+// Selection
+// ==============================================
+
+::selection {
+  background: $color-accent;
+  color: $color-text-light;
+}

@@ -219,7 +219,7 @@ const submitForm = async () => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .contact-section {
   background: var(--color-bg-dark);
 }

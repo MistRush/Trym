@@ -70,7 +70,7 @@ const nextImage = () => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .gallery-section {
   background: var(--color-bg-dark);
 }

@@ -69,7 +69,7 @@
 <script setup>
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .clients-section {
   background: var(--color-bg-darker);
 }

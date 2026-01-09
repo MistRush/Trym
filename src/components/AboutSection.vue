@@ -73,7 +73,7 @@ const team = ref([
 ])
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .about-section {
   background: var(--color-bg-dark);
 }
