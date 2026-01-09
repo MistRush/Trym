@@ -1,0 +1,106 @@
+// ==============================================
+// TRYM Design System - SCSS Variables
+// ==============================================
+
+// Brand Colors
+$color-bg-dark: #0E1B36;
+$color-bg-darker: #0A1428;
+$color-bg-light: #1B2D43;
+
+// Functional Colors
+$color-primary: #E11212;
+$color-accent: #FF4B91;
+$color-success: #32C746;
+$color-warning: #EFAB00;
+$color-card-bg: #F1F6F9;
+$color-outline: #DDEBF3;
+$color-subtle: #576583;
+$color-grey: #9FAECF;
+
+// Text Colors
+$color-text-light: #FFFFFF;
+$color-text-muted: rgba(255, 255, 255, 0.7);
+$color-text-dark: #1A1A1A;
+
+// Gradients
+$gradient-brand: linear-gradient(90deg, $color-accent 0%, $color-primary 100%);
+$gradient-brand-vertical: linear-gradient(180deg, $color-accent 0%, $color-primary 100%);
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+// Border Radius
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-full: 9999px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Font Sizes
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.25rem;
+$text-xl: 1.5rem;
+$text-2xl: 2rem;
+$text-3xl: 2.5rem;
+$text-4xl: 3rem;
+$text-5xl: 4rem;
+$text-6xl: 4.5rem;
+
+// Grid
+$container-desktop: 1320px;
+$container-notebook: 1070px;
+$container-mobile: 360px;
+$gutter: 30px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+$shadow-glow: 0 0 30px rgba($color-primary, 0.3);
+
+// ==============================================
+// Mixins
+// ==============================================
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@mixin card-base {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: $radius-lg;
+    transition: all $transition-normal;
+}
+
+@mixin card-hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba($color-primary, 0.3);
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+}
+
+@mixin gradient-text {
+    background: $gradient-brand;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
